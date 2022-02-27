@@ -6,12 +6,14 @@ const downloadRoute = require("./routes/download");
 require("dotenv").config();
 const multer = require("multer");
 const path = require("path");
+const cors = require("cors");
 const { engine } = require("express/lib/application");
 
 const app = express();
 
 app.use(express.static("public"));
 app.use(express.json());
+app.use(cors());
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
