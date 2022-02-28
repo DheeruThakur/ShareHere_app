@@ -10,10 +10,13 @@ const cors = require("cors");
 const { engine } = require("express/lib/application");
 
 const app = express();
+const corsOption = {
+  origin: process.env.ALLOWED_CLIENTS,
+};
 
 app.use(express.static("public"));
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOption));
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
