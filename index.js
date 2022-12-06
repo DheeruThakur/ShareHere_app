@@ -33,7 +33,7 @@ app.use(
   )
 );
 
-app.set("views", path.join(__dirname, "/views"));
+app.set("views", path.join(/tmp, "/views"));
 app.set("view engine", "ejs");
 
 app.use("/api/files", fileRoute);
