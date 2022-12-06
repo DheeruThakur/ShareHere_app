@@ -36,9 +36,9 @@ app.use(
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
 
-app.use("/api/files", fileRoute);
-app.use("/files", showRoute);
-app.use("/files/download", downloadRoute);
+app.use("api/files", fileRoute);
+app.use("files", showRoute);
+app.use("files/download", downloadRoute);
 
 const PORT = process.env.PORT || 1080;
 mongoose.connect(process.env.MONGO_CONNECTION_URL, () => {
